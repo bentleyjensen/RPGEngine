@@ -51,8 +51,6 @@ namespace RPGEngine
         public int MagicResist { get; set; }
         public int PoisonResist { get; set; }
         public int HungerResist { get; set; }
-        public int  { get; set; }
-
     }
 }
 

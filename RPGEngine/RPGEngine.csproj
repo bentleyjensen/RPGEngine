@@ -16,5 +16,15 @@
     <None Remove="BaseStatistics.cs~" />
     <None Remove="Character.cs~" />
     <None Remove="CharacterStatistics.cs~" />
+    <None Remove="items\BaseItem.cs~" />
+    <None Remove="items\EquipableItem.cs~" />
+    <None Remove="ConsumableItem.cs~" />
+    <None Remove="Item.cs~" />
+    <None Remove="characters\Character.cs~" />
+    <None Remove="Effects.cs~" />
+    <None Remove="effects\Effects.cs~" />
+    <None Remove="effects\BaseEffect.cs~" />
+    <None Remove="items\ArmorItem.cs~" />
+    <None Remove="items\ConsumableItem.cs~" />
   </ItemGroup>
 </Project>
