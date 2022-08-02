@@ -8,7 +8,7 @@ namespace RPGEngine.Items
     {
         public static ConsumableItem Beer = new ConsumableItem
         {
-            Name = "Healing Potion",
+            Name = "Beer",
             Type = "Consumable",
             ItemCategory = "Red",
             Rarity = "Common",
@@ -21,11 +21,11 @@ namespace RPGEngine.Items
         };
         public static ConsumableItem BigPotion = new ConsumableItem
         {
-            Name = "Healing Potion",
+            Name = "Big Potion",
             Type = "Consumable",
-            ItemCategory = "Red",
-            Rarity = "Common",
-            Price = 3,
+            ItemCategory = "Purple",
+            Rarity = "Uncommon",
+            Price = 7,
             ConsumeEffects = new List<Effect> {
                 Effects.Health1,
                 Effects.Mana1,
