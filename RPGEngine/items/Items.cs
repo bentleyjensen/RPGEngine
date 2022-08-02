@@ -6,6 +6,19 @@ namespace RPGEngine.Items
 {
     public class Potions
     {
+        public static ConsumableItem Beer = new ConsumableItem
+        {
+            Name = "Healing Potion",
+            Type = "Consumable",
+            ItemCategory = "Red",
+            Rarity = "Common",
+            Price = 3,
+            ConsumeEffects = new List<Effect> {
+                Effects.Health2,
+                new Effect(-2, "Intelligence", false, true, 5),
+                new Effect(2, "Constitution", false, true, 5)
+            }
+        };
         public static ConsumableItem BigPotion = new ConsumableItem
         {
             Name = "Healing Potion",

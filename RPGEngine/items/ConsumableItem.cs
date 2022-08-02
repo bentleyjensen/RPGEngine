@@ -18,7 +18,7 @@ namespace RPGEngine.Item
                 ConsumeEffects.ForEach(delegate(Effect effect)
                 {
                     // Mark positive and negative values
-                    string polarity = (effect.Amount < 0) ? "-" : "+";
+                    string polarity = (effect.Amount < 0) ? "" : "+";
                     // If it's turn-based, list turns
                     string turnCount = (effect.isTurnBased) ? $" for {effect.TurnsToExpire} turns": "";
                     // Append description

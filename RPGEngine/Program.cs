@@ -13,8 +13,9 @@ namespace RPGEngine
             List<BaseItem> bInventory = Bentley.Inventory.getInventory();
 
             Console.WriteLine(bInventory[0].Description);
-            Console.WriteLine(Items.Potions.HealingPotion1.Description);
+            Console.WriteLine(Items.Potions.BigPotion.Description);
             Console.WriteLine("PLBTH");
+            Console.WriteLine(Items.Potions.Beer.Description);
 
 
             
