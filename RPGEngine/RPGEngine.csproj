@@ -26,5 +26,7 @@
     <None Remove="effects\BaseEffect.cs~" />
     <None Remove="items\ArmorItem.cs~" />
     <None Remove="items\ConsumableItem.cs~" />
+    <None Remove="Inventory.cs~" />
+    <None Remove="Items.cs~" />
   </ItemGroup>
 </Project>
