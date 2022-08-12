@@ -68,7 +68,7 @@ namespace RPGEngine
         }
 
         /// <summary>
-        /// Remove an actively equipped 
+        /// Remove an actively equipped item
         /// </summary>
         /// <param name="item"></param>
         public void Unequip(EquipableItem item) {
