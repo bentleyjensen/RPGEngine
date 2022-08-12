@@ -3,54 +3,59 @@ namespace RPGEngine
 {
     public class BaseStatistics
     {
+        public BaseStatistics() {
+            SoloEffects = new Effect[] { };
+            PartyEffects = new Effect[] { };
+        }
         public BaseStatistics(int defaultNum)
         {
             SoloEffects = new Effect[] { };
             PartyEffects = new Effect[] { };
 
-            HealthPoints = defaultNum;
-            ManaPoints = defaultNum;
-            CurrentHealth = defaultNum;
-            CurrentMana = defaultNum;
+            MaxHealth = defaultNum;
+            MaxMana = defaultNum;
+            Health = defaultNum;
+            Mana = defaultNum;
 
-            Strength = 1;
-            Defense = 1;
-            Dexterity = 1;
-            Intelligence = 1;
-            Wisdom = 1;
-            Charisma = 1;
-            Luck = 1;
-
-
+            Strength = defaultNum;
+            Defense = defaultNum;
+            Dexterity = defaultNum;
+            Intelligence = defaultNum;
+            Wisdom = defaultNum;
+            Charisma = defaultNum;
+            Luck = defaultNum;
         }
 
-        public int HealthPoints { get; set; }
-        public int CurrentHealth { get; set; }
-        public int HealthRecovery { get; set; }
-        public int HealthResist { get; set; }
+        public int MaxHealth { get; set; } = 100;
+        public int Health { get; set; } = 100;
+        public int HealthRecovery { get; set; } = 0;
+        public int HealthResist { get; set; } = 0;
 
-        public int ManaPoints { get; set; }
-        public int CurrentMana { get; set; }
-        public int ManaRecovery { get; set; }
-        public int ManaResist { get; set; }
+        public int MaxMana { get; set; } = 100;
+        public int Mana { get; set; } = 100;
+        public int ManaRecovery { get; set; } = 0;
+        public int ManaResist { get; set; } = 0;
 
-        public int Hunger { get; set; }
+        public int MaxHunger { get; set; } = 100;
+        public int Hunger { get; set; } = 100;
+        public int HungerRate { get; set; } = 5;
+
         public Effect[] SoloEffects { get; set; }
         public Effect[] PartyEffects { get; set; }
 
-        public int Strength { get; set; } // Power/Damage/max carry weight
-        public int Defense { get; set; } // Resiliency: decreases damage, recovery
-        public int Dexterity { get; set; } // Agility: dodge chance, movement speed, attack speed
-        public int Intelligence { get; set; } // Magic skill, points when leveling up
-        public int Wisdom { get; set; } // Party loyalty, Magic skill (casting...?)
-        public int Charisma { get; set; } // Social: trading prices, NPC niceness/honesty
-        public int Luck { get; set; } // Critical hit chance, drop item rarity chance, etc.
+        public int Strength { get; set; } = 1; // Power/Damage/max carry weight
+        public int Defense { get; set; } = 1; // Resiliency: decreases damage, recovery
+        public int Dexterity { get; set; } = 1; // Agility: dodge chance, movement speed, attack speed
+        public int Intelligence { get; set; } = 1; // Magic skill, points when leveling up
+        public int Wisdom { get; set; } = 1; // Party loyalty, Magic skill (casting...?), secret revelation?
+        public int Charisma { get; set; } = 1; // Social: trading prices, NPC niceness/honesty
+        public int Luck { get; set; } = 1; // Critical hit chance, drop item rarity chance, etc.
 
-        public int FireResist { get; set; }
-        public int WaterResist { get; set; }
-        public int MagicResist { get; set; }
-        public int PoisonResist { get; set; }
-        public int HungerResist { get; set; }
+        public int FireResist { get; set; } = 0;
+        public int WaterResist { get; set; } = 0;
+        public int MagicResist { get; set; } = 0;
+        public int PoisonResist { get; set; } = 0;
+        public int HungerResist { get; set; } = 0;
     }
 }
 
