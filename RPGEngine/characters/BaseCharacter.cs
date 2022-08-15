@@ -5,10 +5,10 @@ namespace RPGEngine
     {
         public BaseCharacter(int defaultNum)
         {
-            statistics = new BaseStatistics(defaultNum);
+            Statistics = new CharacterStatistics(defaultNum);
         }
 
-        public BaseStatistics statistics { get; set; }
+        public CharacterStatistics Statistics { get; set; }
         public string Alignment {
             get {
                 return Alignment;

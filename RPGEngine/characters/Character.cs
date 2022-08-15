@@ -10,14 +10,12 @@ namespace RPGEngine
             Name = name;
             Inventory = new Inventory(30, false);
             EquippedItems = new List<EquipableItem> { };
-            StatisticEffects = new List<Effect> { };
         }
 
         public string Name { get; set; }
         public int Money { get; set; }
         public Inventory Inventory { get; set; }
         public List<EquipableItem> EquippedItems { get; set; }
-        public List<Effect> StatisticEffects { get; set; }
 
         public string[] EquipSlots =
         {
@@ -53,17 +51,34 @@ namespace RPGEngine
             // Check equiped items to see if the slot is already taken
             if (false)
                 throw new Exception($"There is already an item equiped in the {equipSlot} slot");
-            // Remove from Inventory
+            // Check that the item is in the inventory
             if (false)
                 throw new Exception($"{item.Name} is not in the inventory");
+
+            List<string> affectedStats = new List<string> { };
+
+            // Remove from Inventory
             Inventory.Remove(item);
             // Add to EquipedItems
             EquippedItems.Add(item);
             // Add status effects/enchantments to stats
             foreach (Effect effect in item.EquipEffects)
-                StatisticEffects.Add(effect);
+            {
+                Statistics.StatusEffects.Add(effect);
+                affectedStats.Add(effect.Statistic);
+            }
+
             foreach (Effect effect in item.Enchantments)
-                StatisticEffects.Add(effect);
+            {
+                Statistics.StatusEffects.Add(effect);
+                affectedStats.Append(effect.Statistic);
+            }
+
+            // Recalculate stats so the working stats are accurate
+            foreach(string stat in affectedStats)
+            {
+                Statistics.RecalulateStats(stat);
+            }
             return true;
         }
 
