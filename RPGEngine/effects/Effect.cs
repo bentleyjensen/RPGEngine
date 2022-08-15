@@ -19,6 +19,14 @@ namespace RPGEngine
             TurnsToExpire = turnsToExpire;
         }
 
+        public override string ToString()
+        {
+            string polarity = (Amount < 0)? "": "+";
+            string turnCount = (isTurnBased) ? $" for {TurnsToExpire} turns" : "";
+            // Append description
+            return $"{polarity}{Amount} {Statistic}{turnCount}";
+        }
+
         public enum StatisticEffects
         {
             Health,
