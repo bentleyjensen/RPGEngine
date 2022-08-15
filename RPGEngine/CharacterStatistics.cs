@@ -16,7 +16,7 @@ namespace RPGEngine
         public CharacterStatistics(int DefaultNum)
         {
             BaseStats = new BaseStatistics(DefaultNum);
-            Stats = new BaseStatistics();
+            Stats = new BaseStatistics(DefaultNum);
             StatusEffects = new List<Effect> { };
         }
 
@@ -82,7 +82,8 @@ namespace RPGEngine
                         where prop.ToString().Split(' ')[1] == statistic
                         select prop;
 
-            foreach (var property in properties)
+            // Since it's an iEnumerable, we have to iterate, even though we only expect one
+            foreach (var property in selectProperties)
             {
                 // Init property to BaseStat value
                 property.SetValue(Stats, property.GetValue(BaseStats));
